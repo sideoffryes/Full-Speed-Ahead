@@ -1,64 +1,83 @@
-<!-- script that loggs user out. Link to this is found in nav bar. If user is not logged in they are given an error message. 
+<!-- script that logs user out. Link to this is found in nav bar. If user is not logged in they are given an error message. 
 TODO: none -->
-<html>
-<?php
-    session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+    <?php session_start(); ?>
 
-<head>
-    <meta charset="utf-8">
-    <title>Proj Sign confirm</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="toolbar.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-</head>
-<?php
-//error message. gives user links to home parge and login page
-    if (!isset($_SESSION['username'])) {
-        ?><br><br><br>
-        <div class="card" style="width: 50rem; margin: auto; margin-top: 100px color:051026;">
-            <div class="card-body" style="color:051026;">
-                <h4 class="card-title"style="text-align:center;">Error</h4>
-                <p class="card-text" style="text-align:center;">Cannot Logout when you are not already not logged in.</p>
-                <div style="text-align: center;">
-                    <a href="index.html" class="card-link">Home Page</a>
-
-                    <a href="login.html" class="card-link">Login Page</a>
-                </div>
-            </div>
-            </div>
-    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+        <title>Logout</title>
         
-<?php
-    }
-    //if user is logged in, unset all session variables
-    else{
-        unset($_SESSION['username']);
-        unset($_SESSION['first']);
-        unset($_SESSION['last']);
-        unset($_SESSION['alpha']);
-        unset($_SESSION['year']);
-        unset($_SESSION['company']);
-    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+    </head>
 
-?>
-<br><br>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Full Speed Ahead</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            
+                        <!-- Workouts drop down menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Workouts</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="search.php">Search Workouts</a></li>
+                                <li class="nav-item"><a class="nav-link" href="logWork.php">Log Workouts</a></li>
+                            </ul>
+                        </li>
 
-<div class="card" style="width: 50rem; margin: auto; margin-top: 100px color:051026;">
-            <div class="card-body" style="color:051026;">
-                <p class="card-text" style="text-align:center;">Successfully logged out.</p>
-                <div style="text-align: center;">
-                    <a href="index.html" class="card-link">Home Page</a>
-                    <a href="login.html" class="card-link">Login Page</a>
+                        <!-- Link to admin page -->
+                        <li class="nav-item"><a class="nav-link" href="admin.html">Admin Page</a></li>
+
+                        <!-- Account drop down menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="logout.php">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            </div>
+        </nav>
 
-<?php } ?>
-    
+        <div class="container">
+            <?php if (!isset($_SESSION['username'])) { ?>
+                <!-- error message. gives user links to home parge and login page -->
+                <h1 class="display-4 fw-bold text-center">Error</h1>
+                <p class="fs-4 text-center">You cannot logout if you are not already not logged in.</p>
+
+                <div class="text-center">
+                    <a href="index.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Home</a>
+                    <a href="login.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Login</a>
+                </div>
+                    
+            <?php
+                } else {
+                    //if user is logged in, unset all session variables
+                    unset($_SESSION['username']);
+                    unset($_SESSION['first']);
+                    unset($_SESSION['last']);
+                    unset($_SESSION['alpha']);
+                    unset($_SESSION['year']);
+                    unset($_SESSION['company']);
+            ?>
+
+            <h1 class="display-4 fw-bold text-center">Successfully logged out.</h1>
+
+            <div class="text-center">
+                <a href="index.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Home</a>
+                <a href="login.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Login</a>
+            </div>
+        </div>
+        <?php } ?>
+    </body>                
 </html>
