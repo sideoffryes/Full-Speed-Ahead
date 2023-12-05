@@ -1,83 +1,131 @@
 <!-- form that allows new users to register with website
 TODO: none
 -->
-<head>
-    <meta charset="utf-8">
-    <title>Proj sign</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="toolbar.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <style>
-        
-    </style>
-</head>
-
-<body>
-    <!-- nav bar-->
-    <div class="topnav">
-        <a  href="index.html">Home</a>
-        <a href="search.php">Search Workouts</a>
-        <a href="logWork.php">Log Workouts</a>  
-        <a  href="login.html">Login</a>
-        <a class="active" href="signup.html">Sign up</a>
-        <a href="admin.html">Admin</a>
-        <a href = "logout.php"> Log out</a>
-
-    </div>
-
-    
-        <br><br>
-        <h1 style="color:#051026; text-align: center;">Sign Up</h1>
-        <br>
-        <form class = "border"  method="post" action="submit.php">
-            <div class="form-outline mb-4">
-                <input type="text" id="first" name = "first" class="form-control" required/>
-                <label class="form-label" for="first">First name</label>
-            </div>
-
-            <div class="form-outline mb-4">
-                <input type="text" id="last" name="last" class="form-control" required/>
-                <label class="form-label" for="last">Last name</label>
-            </div>
-
-            <div class="form-outline mb-4">
-                <input type="text" id="alpha" name="alpha" class="form-control" required/>
-                <label class="form-label" for="alpha">Alpha</label>
-            </div>
-
-            <div class="form-outline mb-4">
-                <input type="text" id="company" name="company" class="form-control" required/>
-                <label class="form-label" for="company">Company</label>
-            </div>
-
-            <div class="form-outline mb-4">
-                <input type="text" id="year" name="year" class="form-control" required/>
-                <label class="form-label" for="year">Class year</label>
-            </div>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-            <input type="email" id="email" name="email" class="form-control" required/>
-            <label class="form-label" for="email">Email address</label>
-            </div>
-        
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-            <input type="password" id="psswd" name="psswd" class="form-control" required/>
-            <label class="form-label" for="psswd">Password</label>
-            </div>
-        
-         
-        
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
-        
-         
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
             
-        </form>
-    
+        <title>Create an Account</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+    </head>
 
-</body>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Full Speed Ahead</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            
+                        <!-- Workouts drop down menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Workouts</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="search.php">Search Workouts</a></li>
+                                <li class="nav-item"><a class="nav-link" href="logWork.php">Log Workouts</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Link to admin page -->
+                        <li class="nav-item"><a class="nav-link" href="admin.html">Admin Page</a></li>
+
+                        <!-- Account drop down menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="signup.html">Sign Up</a></li>
+                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                                <li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Page title -->
+        <div class="container-fluid bg-dark-subtle">
+            <h1 class="display-4 fw-bold text-center">Create a New Account</h1>
+            <p class="fs-4 text-center">Enter your information below to create a new <i>Full Speed Ahead</i> account!</p>
+        </div>
+        
+        <div class="container">
+            <form method="post" action="submit.php">
+                <div class="row">
+                    <div class="col-6">
+                        <!-- First Name -->
+                        <div class="mb-3">
+                            <label class="form-label" for="first">First name</label>
+                            <input type="text" id="first" name = "first" class="form-control" aria-describedby="firstNameHelp" placeholder="Major" required/>
+                            <div id="firstNameHelp" class="form-text">Enter your first name.</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <!-- Last Name -->
+                        <div class="mb-3">
+                            <label class="form-label" for="last">Last name</label>
+                            <input type="text" id="last" name="last" class="form-control" aria-describedby="lastNameHelp" placeholder="Gilroy" required/>
+                            <div id="lastNameHelp" class="form-text">Enter your last name.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <!-- Alpha -->
+                        <div class="mb-3">
+                            <label class="form-label" for="alpha">Alpha</label>
+                            <input type="text" id="alpha" name="alpha" class="form-control" aria-describedby="alphaHelp" placeholder="25XXXX" required/>
+                            <div id="alphaHelp" class="form-text">Enter your alpha number.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <!-- Company -->
+                        <div class="mb-3">
+                            <label class="form-label" for="company">Company</label>
+                            <input type="text" id="company" name="company" class="form-control" aria-describedby="companyHelp" placeholder="36" required/>
+                            <div id="companyHelp" class="form-text">Enter your company number.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <!-- Class Year -->
+                        <div class="mb-3">
+                            <label class="form-label" for="year">Class year</label>
+                            <input type="text" id="year" name="year" class="form-control" aria-describedby="classHelp" placeholder="2025" required/>
+                            <div id="classHelp" class="form-text">Enter your graduating class year.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <!-- Email input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Email address</label>
+                            <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="I<3ElfOnTheShelf@usmc.mil" required/>
+                            <div id="emailHelp" class="form-text">Enter your email address.</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <!-- Password input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="psswd">Password</label>
+                            <input type="password" id="psswd" name="psswd" class="form-control" aria-describedby="passwordHelp" required/>
+                            <div id="passwordHelp" class="form-text">Enter the password you will use for your account.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-secondary btn-lg">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

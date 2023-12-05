@@ -110,7 +110,9 @@ TODO: none -->
                 </div>
                     
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-secondary btn-lg">Submit</button>
+                </div>
             </form>
         </div>
     </body>
