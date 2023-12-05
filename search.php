@@ -96,10 +96,10 @@ TODO: none -->
                     <label for="workout" class="form-label">Workout Type</label>
                     <select class="form-select" aria-label="Workout selection" id="type" name="type">
                         <option selected>Choose a workout type</option>
-                        <option value="1">Run</option>
-                        <option value="2">Swim</option>
-                        <option value="3">Bike</option>
-                        <option value="4">Walk</option>
+                        <option value="run">Run</option>
+                        <option value="swim">Swim</option>
+                        <option value="bike">Bike</option>
+                        <option value="walk">Walk</option>
                     </select>
                     <div id="workoutHelp" class="form-text">Enter the type of workout you completed here.</div>
                 </div>

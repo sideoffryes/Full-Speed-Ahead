@@ -4,3 +4,8 @@ mag	k	24324	1	2024	walk	123	nj	123546
 mag	k	24324	1	2024	bike	23	bg	7	
 mag	k	24324	1	2024	walk	45	moms house	100	
 Henry	Frye	251854	16	2025	run	45	Hospital Point	4	
+Henry	Frye	251854	16	2025	bike	120	Nimitz	0	
+Henry	Frye	251854	16	2025	run	90	Nimitz	1	
+Henry	Frye	251854	16	2025	swim	60	Hopper	34	
+Henry	Frye	251854	16	2025	swim	60	Hopper	34	
+Henry	Frye	251854	16	2025	swim	60	Hopper	34	
