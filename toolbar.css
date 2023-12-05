@@ -1,0 +1,67 @@
+.head { 
+    /*border: 5px outset rgb(231, 189, 97);*/
+    background-color: #051026;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+.topnav {
+background-color: #051026;
+overflow: hidden;
+}
+
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: rgba(243, 209, 137, 0.488);
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: rgb(231, 189, 97);
+color: #051026;
+}
+
+.center {  
+    padding-left: 600px;  
+    padding-right: 600px;
+   
+}
+
+.border{
+    border-radius: 15px;
+    border: 10px solid #051026;
+    padding: 20px; 
+    width: 900px;
+    height: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.borders{
+    border-radius: 15px;
+    border: 0.5px solid #051026;
+    padding: 20px; 
+    width: 900px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+
+.cardLink{
+    text-align: center;
+}

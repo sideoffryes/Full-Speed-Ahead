@@ -1,0 +1,2 @@
+first name	last name	alpha	company	class year	email	password 
+mag	k	24324	1	2024	a@a	Aa1	
