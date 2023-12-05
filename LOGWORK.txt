@@ -3,3 +3,4 @@ mag	k	24324	1	2024	bike	1.5	annapolis	1.2
 mag	k	24324	1	2024	walk	123	nj	123546	
 mag	k	24324	1	2024	bike	23	bg	7	
 mag	k	24324	1	2024	walk	45	moms house	100	
+Henry	Frye	251854	16	2025	run	45	Hospital Point	4	

@@ -1,2 +1,3 @@
 first name	last name	alpha	company	class year	email	password 
 mag	k	24324	1	2024	a@a	Aa1	
+Henry	Frye	251854	16	2025	m251854@usna.edu	MaggieStinks1	
