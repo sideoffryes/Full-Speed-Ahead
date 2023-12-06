@@ -13,24 +13,6 @@ TODO: none -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
     </head>
-
-  
-    <?php
-    if (!isset($_SESSION['username'])) {
-        ?><br><br><br> 
-        <!-- error message for if user is not logged in. Gices user link back to login page -->
-        <div class="card" style="width: 50rem; margin: auto; margin-top: 100px color:051026;">
-            <div class="card-body" style="color:051026;">
-                <h4 class="card-title"style="text-align:center;">Error</h4>
-                <p class="card-text" style="text-align:center;">Please login to search workouts.</p>
-                <div style="text-align: center;">
-                    <a href="login.html" class="card-link">Login Page</a>
-                </div>
-            </div>
-        </div>
-    <?php
-    }else{?>
-    <!-- if user is logged in -->
     <body>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
@@ -52,6 +34,9 @@ TODO: none -->
                         <!-- Link to admin page -->
                         <li class="nav-item"><a class="nav-link" href="admin.html">Admin Page</a></li>
 
+                        <!-- Link to about us page -->
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
                         <!-- Account drop down menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
@@ -65,45 +50,68 @@ TODO: none -->
                 </div>
             </div>
         </nav>
-
+        <?php
+        if (!isset($_SESSION['username'])) {
+            ?><br><br><br> 
+            <!-- error message for if user is not logged in. Gices user link back to login page -->
+            <div class="card" style="width: 50rem; margin: auto; margin-top: 100px color:051026;">
+                <div class="card-body" style="color:051026;">
+                    <h4 class="card-title"style="text-align:center;">Error</h4>
+                    <p class="card-text" style="text-align:center;">Please login to search workouts.</p>
+                    <div style="text-align: center;">
+                        <a href="login.html" class="card-link">Login Page</a>
+                    </div>
+                </div>
+            </div>
+        <?php
+        }else{?>
+        <!-- if user is logged in -->
         <!-- Page title -->
         <div class="container-fluid bg-dark-subtle">
                 <h1 class="display-4 fw-bold text-center">Search Workouts</h1>
                 <p class="fs-4 text-center">Fill out the form below to search for workouts logged by users. Fill out the fields for desired filters.</p>
         </div>
         
-        <div class="container-fluid">        
+        <div class="container">        
             <h2 class="display-5 fw-bold text-center">Search Filters</h1>
 
             <!-- new bootstrap form -->
             <form method="post" action="createSearch.php">
-                <!-- Alpha input field -->
-                <div class="mb-3">
-                    <label for="alpha" class="form-label">Alpha</label>
-                    <input type="text" class="form-control" id="alpha" aria-describedby="alphaHelp" name="alpha">
-                    <div id="alphaHelp" class="form-text">Enter your Midshipman Alpha number here.</div>
+                <div class="row">
+                    <div class="col-4">
+                        <!-- Alpha input field -->
+                        <div class="mb-3">
+                            <label for="alpha" class="form-label">Alpha</label>
+                            <input type="text" class="form-control" id="alpha" aria-describedby="alphaHelp" name="alpha">
+                            <div id="alphaHelp" class="form-text">Enter your Midshipman Alpha number here.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <!-- Company input field -->
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company</label>
+                            <input type="text" class="form-control" id="company" aria-describedby="companyHelp" name="company">
+                            <div id="companyHelp" class="form-text">Enter your company number here.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <!-- Workout select field -->
+                        <div class="mb-3">
+                            <label for="workout" class="form-label">Workout Type</label>
+                            <select class="form-select" aria-label="Workout selection" id="type" name="type">
+                                <option selected>Choose a workout type</option>
+                                <option value="run">Run</option>
+                                <option value="swim">Swim</option>
+                                <option value="bike">Bike</option>
+                                <option value="walk">Walk</option>
+                            </select>
+                            <div id="workoutHelp" class="form-text">Enter the type of workout you completed here.</div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Company input field -->
-                <div class="mb-3">
-                    <label for="company" class="form-label">Company</label>
-                    <input type="text" class="form-control" id="company" aria-describedby="companyHelp" name="company">
-                    <div id="companyHelp" class="form-text">Enter your company number here.</div>
+                <div class="text-center">
+                    <button onclick=refresh() class="btn btn-secondary btn-lg">Search</button>
                 </div>
-                
-                <!-- Workout select field -->
-                <div class="mb-3">
-                    <label for="workout" class="form-label">Workout Type</label>
-                    <select class="form-select" aria-label="Workout selection" id="type" name="type">
-                        <option selected>Choose a workout type</option>
-                        <option value="run">Run</option>
-                        <option value="swim">Swim</option>
-                        <option value="bike">Bike</option>
-                        <option value="walk">Walk</option>
-                    </select>
-                    <div id="workoutHelp" class="form-text">Enter the type of workout you completed here.</div>
-                </div>
-                <button onclick=refresh() class="btn btn-primary btn-block mb-4">Search</button>
             </form>
         </div>
     </body>

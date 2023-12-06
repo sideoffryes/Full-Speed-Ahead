@@ -35,6 +35,9 @@ TODO: none-->
                         <!-- Link to admin page -->
                         <li class="nav-item"><a class="nav-link" href="admin.html">Admin Page</a></li>
 
+                        <!-- Link to about us page -->
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
                         <!-- Account drop down menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
