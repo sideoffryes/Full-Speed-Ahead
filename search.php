@@ -53,7 +53,7 @@ TODO: none -->
         <?php
         if (!isset($_SESSION['username'])) {
             ?><br><br><br> 
-            <!-- error message for if user is not logged in. Gices user link back to login page -->
+            <!-- error message for if user is not logged in. Gives user link back to login page -->
             <div class="card" style="width: 50rem; margin: auto; margin-top: 100px color:051026;">
                 <div class="card-body" style="color:051026;">
                     <h4 class="card-title"style="text-align:center;">Error</h4>

@@ -21,6 +21,7 @@ TODO: none-->
 
 $pswd = $_POST["psswd"];
 $username = $_POST["email"];
+$source = $_POST["loginSrc"];
 $FoundUser = 0;
 $first;
 $last;
@@ -86,7 +87,14 @@ else{
     header("Location: search.php");
     header("Location: logWork.php");
     header("Location: submitWork.php");
-    header("Location: index.html");
+
+    // change redirect based on which page login came from
+
+    if ($source == "admin") {
+        header("Location: adminPage.html");
+    } else {
+        header("Location: index.html");
+    }
 
 
     exit();
