@@ -1,16 +1,18 @@
-<!-- script that logs user out. Link to this is found in nav bar. If user is not logged in they are given an error message. 
--->
+<!-- Admin login page. 
+   Passwords for admin accounts are in ADMIN.txt -->
 <!-- maggie kolassa 12/3 -->
+<!-- hnery frye 12/5 -->
+<!-- maggie kolassa 12/8 -->
+
 
 <!DOCTYPE html>
+<?php session_start() ?>
 <html lang="en">
-    <?php session_start(); ?>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
             
-        <title>Logout</title>
+        <title>Admin Page</title>
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
@@ -53,36 +55,44 @@
                 </div>
             </div>
         </nav>
-
-        <div class="container">
-            <?php if (!isset($_SESSION['username'])) { ?>
-                <!-- error message. gives user links to home parge and login page -->
-                <h1 class="display-4 fw-bold text-center">Error</h1>
-                <p class="fs-4 text-center">You cannot logout if you are not already not logged in.</p>
-
-                <div class="text-center">
-                    <a href="index.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Home</a>
-                    <a href="login.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Login</a>
-                </div>
-                    
-            <?php
-                } else {
-                    //if user is logged in, unset all session variables
-                    unset($_SESSION['username']);
-                    unset($_SESSION['first']);
-                    unset($_SESSION['last']);
-                    unset($_SESSION['alpha']);
-                    unset($_SESSION['year']);
-                    unset($_SESSION['company']);
-            ?>
-
-            <h1 class="display-4 fw-bold text-center">Successfully logged out.</h1>
-
-            <div class="text-center">
-                <a href="index.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Home</a>
-                <a href="login.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="false">Login</a>
-            </div>
+        
+        <!-- Page title -->
+        <div class="container-fluid bg-dark-subtle">
+            <h1 class="display-4 fw-bold text-center">Admin Login</h1>
+            <p class="fs-4 text-center">Log in to view admin reports.</p>
         </div>
-        <?php } ?>
-    </body>                
+
+        <!-- check if user is already logged in -->
+        <?php
+        
+        ?>
+        <!-- Login form -->
+        <div class="container">
+            <form method="post" action="loginAdmin.php">
+                <input type="hidden" id="loginSrc" name="loginSrc" value="admin">
+                <div class="row">
+                    <div class="col-6">
+                        <!-- Email input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Email address</label>
+                            <input type="email" id="email" name="email" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <!-- Password input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="psswd">Password</label>
+                            <input type="password" id="psswd" name="psswd" class="form-control" />
+                        </div>
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-secondary">Sign in</button>
+                    <!-- Register buttons -->
+                   
+                </div>
+            </form>
+        </div>
+        <?php 
+        ?>
+    </body>
 </html>

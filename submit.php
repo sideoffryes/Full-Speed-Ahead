@@ -1,5 +1,6 @@
-<!-- script that adds users to websites list of current users (LOG.txt). 
-TODO: add validation for alpha (i.e. must only contain 6 digits), class year (i.e. must be four digit value), company (i.e. must be a number between 1 and 30) -->
+<!-- script that adds users to websites list of current users (LOG.txt). -->
+<!-- maggie kolassa 12/3 -->
+
 <html>
 <head>
     <meta charset="utf-8">

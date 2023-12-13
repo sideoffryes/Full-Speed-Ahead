@@ -9,3 +9,8 @@ Henry	Frye	251854	16	2025	run	90	Nimitz	1
 Henry	Frye	251854	16	2025	swim	60	Hopper	34	
 Henry	Frye	251854	16	2025	swim	60	Hopper	34	
 Henry	Frye	251854	16	2025	swim	60	Hopper	34	
+Henry	Frye	251854	16	2025	run	25	Hospital Point	4	
+Caleb	Koutrakos	255555	16	2025	run	20000	Farragut	50	
+Caleb	Koutrakos	255555	16	2025	run	20	Hospital Point	3	
+Henry	Frye	251854	16	2025	run	45	Hospital Point	4	
+opew1	weruio	3456	235	32	swim	25	Hopper	25	

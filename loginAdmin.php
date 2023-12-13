@@ -1,6 +1,4 @@
-<!-- Script to verify users credentials -->
-<!-- maggie kolassa 12/3 -->
-<!-- hnery frye 12/5 -->
+<!-- validates login attempts from admin.php -->
 <!-- maggie kolassa 12/8 -->
 <html>
 <head>
@@ -20,36 +18,23 @@
 
 <?php
     
-
+//get admin login form values
 $pswd = $_POST["psswd"];
 $username = $_POST["email"];
-$source = $_POST["loginSrc"];
+
 $FoundUser = 0;
-$first;
-$last;
-$alpha;
-$year;
-$company;
 
-
-
-
-$fp = fopen('LOG.txt', 'r');
+//admin account info is stored in ADMIN.txt
+$fp = fopen('ADMIN.txt', 'r');
 $line = fgets($fp);          // read lines
 while( !feof($fp) ) 
 {
     $parsedRow = explode("\t", $line);
-    
+    echo "$parsedRow[1]";
 
     //check if credentials match the ones for the current line. If so load variables that will be saved in the session
-    if(($parsedRow[6] == $pswd) && ($parsedRow[5] == $username)){
+    if(($parsedRow[1] == $pswd) && ($parsedRow[0] == $username)){
         $FoundUser = 1;
-        $first = $parsedRow[0];
-        $last = $parsedRow[1];
-        $alpha = $parsedRow[2];
-        $year = $parsedRow[4];
-        $company = $parsedRow[3];
-       
         break;
     }
     $line = fgets($fp);
@@ -68,7 +53,7 @@ if($FoundUser == 0){
             <h4 class="card-title"style="text-align:center;">Error</h4>
             <p class="card-text" style="text-align:center;">Incorrect password or email address entered. Click the link below to re-try. </p>
             <div style="text-align: center;">
-                <a href="login.html" class="card-link">Login Page</a>
+                <a href="admin.php" class="card-link">Admin login Page</a>
              </div>
         </div>
         </div>
@@ -76,28 +61,8 @@ if($FoundUser == 0){
     <?php
 }
 else{
-    //store session variables
-    session_start();
-    $_SESSION['username'] = $username;
-    $_SESSION['first'] = $first;
-    $_SESSION['last'] = $last;
-    $_SESSION['alpha'] = $alpha;
-    $_SESSION['year'] = $year;
-    $_SESSION['company'] = $company;
-
-    header("Location: logWork.php");
-    header("Location: search.php");
-    header("Location: logWork.php");
-    header("Location: submitWork.php");
-
-    // change redirect based on which page login came from
-
-    if ($source == "admin") {
-        header("Location: adminPage.html");
-    } else {
-        header("Location: index.html");
-    }
-
+    //if login attempt is successfully, redirect to adminPage.php
+    header("Location: adminPage.php");
 
     exit();
 }

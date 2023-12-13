@@ -1,5 +1,8 @@
 <!-- Script creates a table of workouts that match the filter reuiqrements set by the user when they filled out the form on serch.html
     TODOS: none that I can think of-->
+<!-- maggie kolassa 12/3 -->
+<!-- henry frye 12/5 -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +35,7 @@
                         </li>
 
                         <!-- Link to admin page -->
-                        <li class="nav-item"><a class="nav-link" href="admin.html">Admin Page</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admin.php">Admin Page</a></li>
 
                         <!-- Link to about us page -->
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>

@@ -1,6 +1,8 @@
 <!--checks if user is logged in. If they are, allows them to select what filters they would like to use to search for workouts saved in the websites database (LOGWORK.txt)
-The choices for filters are by class year, alpha, or company.
-TODO: none -->
+The choices for filters are by class year, alpha, or company. -->
+<!-- maggie kolassa 12/3 -->
+<!-- hnery frye 12/5 -->
+
 <!DOCTYPE html>
 <?php session_start(); ?>
 <html lang="en">
@@ -32,7 +34,7 @@ TODO: none -->
                         </li>
 
                         <!-- Link to admin page -->
-                        <li class="nav-item"><a class="nav-link" href="admin.html">Admin Page</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admin.php">Admin Page</a></li>
 
                         <!-- Link to about us page -->
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -83,7 +85,7 @@ TODO: none -->
                         <div class="mb-3">
                             <label for="alpha" class="form-label">Alpha</label>
                             <input type="text" class="form-control" id="alpha" aria-describedby="alphaHelp" name="alpha">
-                            <div id="alphaHelp" class="form-text">Enter your Midshipman Alpha number here.</div>
+                            <div id="alphaHelp" class="form-text">Enter Midshipman Alpha number here.</div>
                         </div>
                     </div>
                     <div class="col-4">
@@ -91,7 +93,7 @@ TODO: none -->
                         <div class="mb-3">
                             <label for="company" class="form-label">Company</label>
                             <input type="text" class="form-control" id="company" aria-describedby="companyHelp" name="company">
-                            <div id="companyHelp" class="form-text">Enter your company number here.</div>
+                            <div id="companyHelp" class="form-text">Enter company number here.</div>
                         </div>
                     </div>
                     <div class="col-4">

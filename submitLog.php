@@ -1,5 +1,7 @@
-<!-- script that adds workouts to LOGWORK.txt after user fills out logWork.php form.
-TODO: none-->
+<!-- script that adds workouts to LOGWORK.txt after user fills out logWork.php form.-->
+<!-- maggie kolassa 12/3 -->
+<!-- hnery frye 12/5 -->
+
 
 <!DOCTYPE html>
 <?php session_start(); ?>
@@ -33,7 +35,7 @@ TODO: none-->
                         </li>
 
                         <!-- Link to admin page -->
-                        <li class="nav-item"><a class="nav-link" href="admin.html">Admin Page</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admin.php">Admin Page</a></li>
 
                         <!-- Link to about us page -->
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
